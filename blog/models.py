@@ -9,9 +9,7 @@ class Post(models.Model):
     # category
     # tag
     counted_view = models.IntegerField()#default=0
-    status = models.BooleanField()
-        # create_date
-
-    # published_date
-    # uploaded_date
-
+    status = models.BooleanField(default=False)
+    published_date = models.DateTimeField(null=True)
+    created_date = models.DateTimeField(auto_now_add=True)
+    updated_date = models.DateTimeField(auto_now=True)   
