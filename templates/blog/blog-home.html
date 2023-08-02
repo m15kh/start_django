@@ -1,6 +1,8 @@
-{%extends 'base.html' %}
+{% extends 'base.html' %}
 {% load static %}
-{%block content%}
+{% block content %}
+{% load blog_tags %}
+
 <!-- start banner Area -->
 <section class="banner-area relative blog-home-banner" id="home">
 	<div class="overlay overlay-bg"></div>
@@ -100,13 +102,14 @@
 						<div class="user-details row">
 							<p class="user-name col-lg-12 col-md-12 col-6"><a href="#">{{post.author}}</a> <span
 									class="lnr lnr-user"></span></p>
-							<p class="date col-lg-12 col-md-12 col-6"><a href="#">{{post.published_date|date:" H:i:s"}}</a> <span class="lnr lnr-calendar-full"></span></p>
+							<p class="date col-lg-12 col-md-12 col-6"><a href="#">{{post.published_date|date:"H:i:s"}}</a> <span class="lnr lnr-calendar-full"></span></p>
 							<p class="view col-lg-12 col-md-12 col-6"><a href="#">{{post.counted_view}}</a> <span
 									class="lnr lnr-eye"></span></p>
 							<p class="comments col-lg-12 col-md-12 col-6"><a href="#">06 Comments</a> <span
 									class="lnr lnr-bubble"></span></p>
+							<p class="comments col-lg-12 col-md-12 col-6"  style="color: red;"> all post:</p>
 						</div>
-					</div>
+					</div>	
 					<div class="col-lg-9 col-md-9 ">
 						<div class="feature-img">
 							<img class="img-fluid" src="{{post.image.url}}" alt="">
@@ -159,107 +162,16 @@
 							<button type="submit"><i class="fa fa-search"></i></button>
 						</form>
 					</div>
+					<!-- you add author static templates!  -->
 					{% include 'blog/blog-writer-info.html' %}
+					<!-- add inclusion tag about last post -->
+					{% latest_posts %}
 
-					<div class="single-sidebar-widget popular-post-widget">
-						<h4 class="popular-title">Popular Posts</h4>
-						<div class="popular-post-list">
-							<div class="single-post-list d-flex flex-row align-items-center">
-								<div class="thumb">
-									<img class="img-fluid" src="{% static 'img/blog/pp1.jpg' %}" alt="">
-								</div>
-								<div class="details">
-									<a href="blog-single.html">
-										<h6>Space The Final Frontier</h6>
-									</a>
-									<p>02 Hours ago</p>
-								</div>
-							</div>
-							<div class="single-post-list d-flex flex-row align-items-center">
-								<div class="thumb">
-									<img class="img-fluid" src="{% static 'img/blog/pp2.jpg' %}" alt="">
-								</div>
-								<div class="details">
-									<a href="blog-single.html">
-										<h6>The Amazing Hubble</h6>
-									</a>
-									<p>02 Hours ago</p>
-								</div>
-							</div>
-							<div class="single-post-list d-flex flex-row align-items-center">
-								<div class="thumb">
-									<img class="img-fluid" src="{% static 'img/blog/pp3.jpg' %}" alt="">
-								</div>
-								<div class="details">
-									<a href="blog-single.html">
-										<h6>Astronomy Or Astrology</h6>
-									</a>
-									<p>02 Hours ago</p>
-								</div>
-							</div>
-							<div class="single-post-list d-flex flex-row align-items-center">
-								<div class="thumb">
-									<img class="img-fluid" src="{% static 'img/blog/pp4.jpg' %}" alt="">
-								</div>
-								<div class="details">
-									<a href="blog-single.html">
-										<h6>Asteroids telescope</h6>
-									</a>
-									<p>02 Hours ago</p>
-								</div>
-							</div>
-						</div>
-					</div>
 					<div class="single-sidebar-widget ads-widget">
 						<a href="#"><img class="img-fluid" src="{% static 'img/blog/ads-banner.jpg' %}" alt=""></a>
 					</div>
-					<div class="single-sidebar-widget post-category-widget">
-						<h4 class="category-title">Post Catgories</h4>
-						<ul class="cat-list">
-							<li>
-								<a href="#" class="d-flex justify-content-between">
-									<p>Technology</p>
-									<p>37</p>
-								</a>
-							</li>
-							<li>
-								<a href="#" class="d-flex justify-content-between">
-									<p>Lifestyle</p>
-									<p>24</p>
-								</a>
-							</li>
-							<li>
-								<a href="#" class="d-flex justify-content-between">
-									<p>Fashion</p>
-									<p>59</p>
-								</a>
-							</li>
-							<li>
-								<a href="#" class="d-flex justify-content-between">
-									<p>Art</p>
-									<p>29</p>
-								</a>
-							</li>
-							<li>
-								<a href="#" class="d-flex justify-content-between">
-									<p>Food</p>
-									<p>15</p>
-								</a>
-							</li>
-							<li>
-								<a href="#" class="d-flex justify-content-between">
-									<p>Architecture</p>
-									<p>09</p>
-								</a>
-							</li>
-							<li>
-								<a href="#" class="d-flex justify-content-between">
-									<p>Adventure</p>
-									<p>44</p>
-								</a>
-							</li>
-						</ul>
-					</div>
+					{% wedget_category %}
+
 					<div class="single-sidebar-widget newsletter-widget">
 						<h4 class="newsletter-title">Newsletter</h4>
 						<p>

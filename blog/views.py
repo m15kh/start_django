@@ -11,6 +11,6 @@ def blog_single(request, pid):
     context = {'post':post}
     return render(request, "blog/blog-single.html", context)
 
-def test(request,pid):
+def test(request):
     # post = Post.objects.get(id=pid)
     return render(request, "test.html")  
