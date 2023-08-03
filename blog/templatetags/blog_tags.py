@@ -5,7 +5,8 @@ register = template.Library()
 
 @register.simple_tag(name="posts")
 def function():
-    posts = Post.objects.filter(status=1)
+    posts = Post.objects.filter(status = 1)
+
     return posts
 
 @register.inclusion_tag("blog/latest_posts.html")
@@ -15,13 +16,13 @@ def latest_posts():
 
 @register.inclusion_tag("blog/category_wedget.html")
 def wedget_category():
-    posts = Post.objects.filter(status=1)
+    posts = Post.objects.filter(status = 1)
     categories = Category.objects.all()
     cat_dic = {}
     for name in categories:
-        cat_dic[name] = posts.filter(category=name).count()
+        cat_dic[name] = posts.filter(post_category=name).count()
 
-    return {'categories': cat_dic}
+    return {'categories123': cat_dic}
 
 
 
