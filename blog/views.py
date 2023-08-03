@@ -13,4 +13,4 @@ def blog_single(request, pid):
 
 def test(request):
     # post = Post.objects.get(id=pid)
-    return render(request, "test.html")  
+    return render(request, "test.html")   
