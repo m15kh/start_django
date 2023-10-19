@@ -27,6 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+SITE_ID = 2  # Or the ID of the site you want to use
+
 
 # Application definition
 
@@ -37,8 +39,17 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "django.contrib.sites",
+    "django.contrib.sitemaps",
+    'captcha',
     "website.apps.WebsiteConfig",
     "blog.apps.BlogConfig",
+    'django.contrib.humanize',
+     'django_extensions',
+        'robots',
+        'taggit',
+        #third party
+   
 ]
 
 MIDDLEWARE = [
@@ -107,7 +118,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = "en-us"
 
-TIME_ZONE = "UTC"
+TIME_ZONE = 'Asia/Tehran'
 
 USE_I18N = True
 

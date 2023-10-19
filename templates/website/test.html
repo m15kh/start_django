@@ -7,5 +7,12 @@
 </head>
 <body>
     <h1>Dear {{name}} i happy to see you   </h1>
+    <h2 style="color: blue;">hello to world wie heisen sie? ich hiese mohammad</h2>
+    
+    
+    <form action="{% url 'website:test' %}"  method="post">{% csrf_token %}
+        {{form.as_p}}
+        <button type="submit">sent</button>
+    </form>
 </body>
 </html>

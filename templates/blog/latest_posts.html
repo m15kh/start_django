@@ -1,6 +1,6 @@
 {% load static %}
 {% load blog_tags %}
-
+{% load humanize %}
 
 <div class="single-sidebar-widget popular-post-widget">
     <h4 class="popular-title">Popular Posts</h4>
@@ -18,7 +18,8 @@
                 <a href="{blog-single.html}">
                     <h6>{{post.title}}</h6>
                 </a>
-                <p>{{post.published_date|date:"H:i:s d"}}</p>
+                <p>{{post.published_date|naturaltime}}</p>
+                <P>{{2000000|intword}}</P>
             </div>
         </div>
         {% endfor %}
