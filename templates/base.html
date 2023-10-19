@@ -20,12 +20,12 @@
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
     <!--
-        CSS
+        CSS    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %} ">
+
         ============================================= -->
     <link rel="stylesheet" href="{% static 'css/linearicons.css' %}">
     <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %} ">
     <link rel="stylesheet" href="{% static 'css/bootstrap.css' %} ">
-    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %} ">
     <link rel="stylesheet" href="{% static 'css/jquery-ui.css' %} ">
     <link rel="stylesheet" href="{% static 'css/nice-select.css' %} ">
     <link rel="stylesheet" href="{% static 'css/animate.min.css' %} ">
@@ -64,12 +64,8 @@
                     <ul class="nav-menu">
                         <li><a href="{% url 'website:index' %}">Home</a></li>
                         <li><a href="{% url 'website:about' %}">About</a></li>
-                        <li class="menu-has-children"><a href="">Blog</a>
-                            <ul>
-                                <li><a href="{% url 'blog:index' %}">Blog Home</a></li>
-                                <li><a href="{% url 'blog:single' %}">Blog Single</a></li>
-                            </ul>
-                        </li>
+                        <li><a href="{% url 'blog:index' %}">Blog Home</a></li>
+                
                         <li class="menu-has-children"><a href="">Pages</a>
                             <ul>
                                 <li><a href="elements.html">Elements</a></li>
